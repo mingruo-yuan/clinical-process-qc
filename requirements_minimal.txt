@@ -1,0 +1,27 @@
+﻿# === 专病库系统 最小依赖 ===
+# 仅包含项目实际 import 的包
+# 原始: 132 packages -> 精简后: ~25 packages (含间接依赖)
+# 移除: torch, transformers, sentence-transformers, langchain*, faiss-cpu, opencv-python, scikit-learn, scipy
+
+# --- Web 框架 ---
+streamlit>=1.60.0
+
+# --- HTTP 客户端 ---
+httpx>=0.28.1
+requests>=2.34.2
+
+# --- 配置 ---
+python-dotenv>=1.2.2
+
+# --- LLM ---
+openai>=2.41.1
+
+# --- 本地 OCR ---
+rapidocr-onnxruntime>=1.4.4
+pymupdf>=1.28.2
+Pillow>=12.3.0
+
+# --- 以下为上述包的必要依赖, pip 会自动解析, 但显式声明以确保版本兼容 ---
+numpy>=2.4.6
+onnxruntime>=1.28.0
+pydantic>=2.13.4
